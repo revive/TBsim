@@ -19,3 +19,14 @@
 
 #include "celestialbody.h"
 
+CelestialBody::CelestialBody ( double m, int id ) : MassObj ( m ), id (id) {
+  name.assign("Default Celetial Body");
+}
+
+void CelestialBody::setName ( const std::string& str) {
+  name = str;
+}
+
+void CelestialBody::setName ( const char* str) {
+  name.assign(str);
+}

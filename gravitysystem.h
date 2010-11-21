@@ -9,6 +9,7 @@
   */
 
 class GravitySystem {
+
 public:
   /**
    * Empty Constructor
@@ -32,13 +33,13 @@ public:
    * add a celestial body into the system.
    * @param  celestialbody
    */
-  void addCelestialBody (CelestialBody * celestialbody );
+  void addCelestialBody ( CelestialBody * celestialbody );
 
   /**
    * Get the list of celestial bodies.
    * @return std::vector<CelestialBodies *>
    */
-  std::vector<CelestialBodies *> getCelestialBodies ( ) const {
+  std::vector<CelestialBody *> getCelestialBodies ( ) const {
     return CelestialBodies;
   }
 
@@ -46,7 +47,7 @@ public:
    * Set the time of the system.
    * @param  t
    */
-  void setTime (double t ) {
+  void setTime ( double t ) {
     time = t;
   }
 
@@ -59,7 +60,14 @@ public:
    * Evoluation to the state after the time given by deltaTime.
    * @param  deltaTime The period to the next state.
    */
-  void Evolution (double deltaTime );
+  void Evolution ( double deltaTime );
+
+  /**
+  * Get a celestial body by its id.
+  * @param id the id of the body
+  * @return the celestialbody, 0 if not found.
+  */
+  CelestialBody * getCelestialBodyById ( int id );
 
 private:
   /**

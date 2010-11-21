@@ -25,10 +25,11 @@
 
 class CelestialBody : public MassObj {
 public:
-  CelestialBody (double m = 1.);
-  int getId();
-  std::string getName() const;
+  CelestialBody (double m = 1., int id = 0);
+  int getId() const { return id; }
+  std::string getName() const { return name;}
   void setName(const std::string &);
+  void setName(const char *);
 private:
   int id;
   std::string name;

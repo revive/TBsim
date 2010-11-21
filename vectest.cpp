@@ -3,6 +3,7 @@
 #include <math.h>
 #include "vector3.h"
 #include "massobj.h"
+#include "celestialbody.h"
 
 using namespace std;
 const double pi = 4.*atan(1.);
@@ -45,5 +46,10 @@ int main (int argc, char* argv[]) {
   cout << m1.getMass() << endl;
   MassObj m2 (-1);
   cout << m2.getMass() << endl;
+  
+  CelestialBody cb(0.5, 1);
+  cout<< cb.getName() << " has id "<< cb.getId() <<endl;
+  cb.setName("Sun");
+  cout<< cb.getName() << " has id "<< cb.getId() << " and mass "<< cb.getMass() <<endl;
   return 0;
 }
